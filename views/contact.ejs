@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        box-sizing: border-box;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      span {
+        width: 20px;
+      }
+
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+
+      .checkbox-group label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .checkbox-group input {
+        margin-top: 9px;
+        margin-left: 5px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <script>
+      // Function to display the popup message
+      function showPopup() {
+        alert("Form submitted successfully!");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Contact Form</h2>
+      <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="subject">Subject of Inquiry:</label>
+        <select id="subject" name="subject">
+          <option value="admissions">Admissions</option>
+          <option value="courses">Courses</option>
+          <option value="general">General Information</option>
+        </select>
+
+        <div class="checkbox-group">
+          <label>Course Type :</label>
+          <label
+            ><span>Science</span>
+            <input type="checkbox" name="courseType" value="science"
+          /></label>
+          <label
+            ><span>Arts</span>
+            <input type="checkbox" name="courseType" value="arts"
+          /></label>
+          <label
+            ><span>Buisness</span>
+            <input type="checkbox" name="courseType" value="business"
+          /></label>
+          <!-- Add more checkboxes for other course types as needed -->
+        </div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
